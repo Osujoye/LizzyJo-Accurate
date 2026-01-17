@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Contact() {
@@ -119,17 +118,16 @@ export default function Contact() {
             ></textarea>
           </div>
 
-         <motion.a
- href="https://wa.me/2349028963407?text=Hello%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-  target="_blank"
-  rel="noopener noreferrer"
-  whileHover={{ scale: 1.03 }}
-  whileTap={{ scale: 0.98 }}
-  className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-4 rounded-full font-bold text-lg shadow-md hover:shadow-lg transition flex items-center justify-center"
->
-  Send Message
-</motion.a>
-
+          <motion.a
+            href="https://wa.me/2349028963407?text=Hello%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-4 rounded-full font-bold text-lg shadow-md hover:shadow-lg transition flex items-center justify-center"
+          >
+            Send Message
+          </motion.a>
         </motion.form>
       </div>
     </motion.section>
