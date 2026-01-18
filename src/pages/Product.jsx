@@ -205,7 +205,7 @@ export default function Products() {
               <img
                 src={p.img}
                 alt={p.title}
-                className="w-full h-64 object-cover rounded-xl transform group-hover:scale-110 transition duration-500"
+                className="w-full h-64 object-fit rounded-xl transform group-hover:scale-110 transition duration-500"
               />
             </div>
 
@@ -235,7 +235,7 @@ export default function Products() {
       </div>
 
       {/* Add Product Form (conditionally rendered) */}
-      {showAddForm && <AddProduct setProducts={setProducts} />} */}
+      {/* {showAddForm && <AddProduct setProducts={setProducts} />} */} 
     </section>
   );
 }

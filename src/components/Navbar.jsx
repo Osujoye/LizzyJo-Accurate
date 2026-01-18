@@ -73,7 +73,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {open && (
         <div className="absolute left-0 right-0 top-20 bg-black/90 py-6 md:hidden shadow-lg">
-          <div className="flex flex-col gap-4 max-w-md mx-auto items-center">
+          <div className="flex flex-col bg-linear-to-br from-pink-50 via-white to-purple-50 gap-4 max-w-md mx-auto items-center">
             <NavLink to="/" onClick={() => setOpen(false)}>
               Home
             </NavLink>
