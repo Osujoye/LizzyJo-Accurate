@@ -33,155 +33,154 @@ export default function Products() {
       price: "₦150,000",
     },
     {
-  id: "5",
-  title: "Brazilian Body Wave Wig",
-  desc: "Soft, voluminous waves for a glamorous look.",
-  price: "₦140,000",
-  img: "/Brazilian Body Wave Wig.jpeg",
-},
-{
-  id: "6",
-  title: "Peruvian Straight Wig",
-  desc: "Silky, smooth texture with excellent density.",
-  price: "₦130,000",
-  img: "/Peruvian Straight Wig.jpeg",
-},
-{
-  id: "7",
-  title: "Malaysian Deep Wave Wig",
-  desc: "Deep, defined waves with full-bodied volume.",
- price: "₦145,000",
-  img: "/Malaysian Deep Wave Wig.jpeg",
-},
-{
-  id: "8",
-  title: "Indian Loose Curl Wig",
-  desc: "Bouncy, soft curls with natural shine.",
- price: "₦135,000",
-  img: "/Indian Loose Curl Wig.jpeg",
-},
-{
-  id: "9",
-  title: "European Straight Bob Wig",
-  desc: "Chic bob cut with smooth silky texture.",
-  price: "₦160,000",
-  img: "/European Straight Bob Wig.jpeg",
-},
-{
-  id: "10",
-  title: "Vietnamese Curly Wig",
-  desc: "Tight, defined curls with long-lasting bounce.",
-  price: "₦155,000",
-  img: "/Vietnamese Curly Wig.jpeg",
-},
-{
-  id: "11",
-  title: "Brazilian Straight Lace Front Wig",
-  desc: "Natural hairline with silky straight hair.",
-  price: "₦170,000",
-  img: "/Brazilian Straight Lace Front Wig.jpeg",
-},
-{
-  id: "12",
-  title: "Peruvian Natural Wave Wig",
-  desc: "Soft waves with natural movement and volume.",
- price: "₦150,000",
-  img: "/Peruvian Natural Wave Wig.jpeg",
-},
-{
-  id: "13",
-  title: "Malaysian Straight Lace Wig",
-  desc: "Straight, silky texture with natural hairline.",
- price: "₦165,000",
-  img: "/Malaysian Straight Lace Wig.jpeg",
-},
-{
-  id: "14",
-  title: "Indian Kinky Curly Wig",
-  desc: "Tightly coiled curls with natural volume.",
- price: "₦145,000",
-  img: "/Indian Kinky Curly Wig.jpeg",
-},
+      id: "5",
+      title: "Brazilian Body Wave Wig",
+      desc: "Soft, voluminous waves for a glamorous look.",
+      price: "₦140,000",
+      img: "/Brazilian Body Wave Wig.jpeg",
+    },
+    {
+      id: "6",
+      title: "Peruvian Straight Wig",
+      desc: "Silky, smooth texture with excellent density.",
+      price: "₦130,000",
+      img: "/Peruvian Straight Wig.jpeg",
+    },
+    {
+      id: "7",
+      title: "Malaysian Deep Wave Wig",
+      desc: "Deep, defined waves with full-bodied volume.",
+      price: "₦145,000",
+      img: "/Malaysian Deep Wave Wig.jpeg",
+    },
+    {
+      id: "8",
+      title: "Indian Loose Curl Wig",
+      desc: "Bouncy, soft curls with natural shine.",
+      price: "₦135,000",
+      img: "/Indian Loose Curl Wig.jpeg",
+    },
+    {
+      id: "9",
+      title: "European Straight Bob Wig",
+      desc: "Chic bob cut with smooth silky texture.",
+      price: "₦160,000",
+      img: "/European Straight Bob Wig.jpeg",
+    },
+    {
+      id: "10",
+      title: "Vietnamese Curly Wig",
+      desc: "Tight, defined curls with long-lasting bounce.",
+      price: "₦155,000",
+      img: "/Vietnamese Curly Wig.jpeg",
+    },
+    {
+      id: "11",
+      title: "Brazilian Straight Lace Front Wig",
+      desc: "Natural hairline with silky straight hair.",
+      price: "₦170,000",
+      img: "/Brazilian Straight Lace Front Wig.jpeg",
+    },
+    {
+      id: "12",
+      title: "Peruvian Natural Wave Wig",
+      desc: "Soft waves with natural movement and volume.",
+      price: "₦150,000",
+      img: "/Peruvian Natural Wave Wig.jpeg",
+    },
+    {
+      id: "13",
+      title: "Malaysian Straight Lace Wig",
+      desc: "Straight, silky texture with natural hairline.",
+      price: "₦165,000",
+      img: "/Malaysian Straight Lace Wig.jpeg",
+    },
+    {
+      id: "14",
+      title: "Indian Kinky Curly Wig",
+      desc: "Tightly coiled curls with natural volume.",
+      price: "₦145,000",
+      img: "/Indian Kinky Curly Wig.jpeg",
+    },
 
-{
-  id: "15",
-  title: "Full Lace Knotless Braid Wig",
-  desc: "Lightweight, natural-looking knotless braids.",
-  price: "₦130,000",
-  img: "/Full Lace Knotless Braid Wig.jpeg",
-},
+    {
+      id: "15",
+      title: "Full Lace Knotless Braid Wig",
+      desc: "Lightweight, natural-looking knotless braids.",
+      price: "₦130,000",
+      img: "/Full Lace Knotless Braid Wig.jpeg",
+    },
 
-{
-  id: "16",
-  title: "Ghana Weaving Cornrow Wig",
-  desc: "Classic Ghana braids with deep, clean cornrows.",
-  price: "₦110,000",
-  img: "/Ghana Weaving Cornrow Wig.jpeg",
-},
+    {
+      id: "16",
+      title: "Ghana Weaving Cornrow Wig",
+      desc: "Classic Ghana braids with deep, clean cornrows.",
+      price: "₦110,000",
+      img: "/Ghana Weaving Cornrow Wig.jpeg",
+    },
 
-{
-  id: "17",
-  title: "Box Braid Wig (Mid-Back Length)",
-  desc: "Neatly crafted box braids for everyday wear.",
-   price: "₦95,000",
-  img: "/Box Braid Wig Mid Back.jpeg",
-},
+    {
+      id: "17",
+      title: "Box Braid Wig (Mid-Back Length)",
+      desc: "Neatly crafted box braids for everyday wear.",
+      price: "₦95,000",
+      img: "/Box Braid Wig Mid Back.jpeg",
+    },
 
-{
-  id: "18",
-  title: "Bohemian Braided Wig",
-  desc: "Boho curls blended with knotless braids.",
-  price: "₦140,000",
-  img: "/Bohemian Braided Wig.jpeg",
-},
+    {
+      id: "18",
+      title: "Bohemian Braided Wig",
+      desc: "Boho curls blended with knotless braids.",
+      price: "₦140,000",
+      img: "/Bohemian Braided Wig.jpeg",
+    },
 
-{
-  id: "19",
-  title: "Tribal Fulani Braided Wig",
-  desc: "Fulani-style braids with beads and accessories.",
-  price: "₦125,000",
-  img: "/Fulani Braided Wig.jpeg",
-},
+    {
+      id: "19",
+      title: "Tribal Fulani Braided Wig",
+      desc: "Fulani-style braids with beads and accessories.",
+      price: "₦125,000",
+      img: "/Fulani Braided Wig.jpeg",
+    },
 
-{
-  id: "20",
-  title: "Straight Back Ghana-Weaving Wig",
-  desc: "Neat straight-back cornrows for a classy look.",
-  price: "₦90,000",
-  img: "/Straight Back Ghana Weaving Wig.jpeg",
-},
+    {
+      id: "20",
+      title: "Straight Back Ghana-Weaving Wig",
+      desc: "Neat straight-back cornrows for a classy look.",
+      price: "₦90,000",
+      img: "/Straight Back Ghana Weaving Wig.jpeg",
+    },
 
-{
-  id: "21",
-  title: "Passion Twist Braided Wig",
-  desc: "Soft, springy passion twists for a natural look.",
-  price: "₦100,000",
-  img: "/Passion Twist Braided Wig.jpeg",
-},
+    {
+      id: "21",
+      title: "Passion Twist Braided Wig",
+      desc: "Soft, springy passion twists for a natural look.",
+      price: "₦100,000",
+      img: "/Passion Twist Braided Wig.jpeg",
+    },
 
-{
-  id: "22",
-  title: "Curly Ends Braid Wig",
-  desc: "Knotless braids with luxurious curly ends.",
-  price: "₦115,000",
-  img: "/Curly Ends Braid Wig.jpg",
-},
+    {
+      id: "22",
+      title: "Curly Ends Braid Wig",
+      desc: "Knotless braids with luxurious curly ends.",
+      price: "₦115,000",
+      img: "/Curly Ends Braid Wig.jpg",
+    },
 
-{
-  id: "23",
-  title: "Million Braids Wig",
-  desc: "Extremely tiny, detailed braids for a rich look.",
-  price: "₦200,000",
-  img: "/Million Braids Wig.jpeg",
-},
+    {
+      id: "23",
+      title: "Million Braids Wig",
+      desc: "Extremely tiny, detailed braids for a rich look.",
+      price: "₦200,000",
+      img: "/Million Braids Wig.jpeg",
+    },
   ];
 
   const [products, setProducts] = useState(initialProducts);
-  const [showAddForm, setShowAddForm] = useState(false);
+  // const [showAddForm, setShowAddForm] = useState(false);
 
   return (
     <section className="bg-dark text-pink-500 py-24 px-6 md:px-32 relative overflow-hidden">
-  
       <div className="absolute inset-0 h-96 bg-gradient-to-b from-accent/10 via-dark to-dark -z-10"></div>
 
       <div className="max-w-6xl mx-auto text-center mb-16">
@@ -224,18 +223,9 @@ export default function Products() {
           </div>
         ))}
       </div>
-      {/* Add Product Button
-      <div className="max-w-6xl mx-auto mt-12">
-        <button
-          onClick={() => setShowAddForm(!showAddForm)}
-          className="px-6 py-3 bg-pink-300 text-dark font-bold rounded-full hover:bg-primary transition"
-        >
-          {showAddForm ? "Close Form" : "Add New Product"}
-        </button>
-      </div>
+      { {showAddForm && <AddProduct setProducts={setProducts} />} } 
+      {{showAddForm && <AddProduct setProducts={setProducts} />} }
 
-      {/* Add Product Form (conditionally rendered) */}
-      {/* {showAddForm && <AddProduct setProducts={setProducts} />} */} 
     </section>
   );
 }
