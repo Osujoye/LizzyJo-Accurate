@@ -15,7 +15,8 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import DashboardHome from "./pages/admin/Dashboard";
 import PublicLayout from "./layouts/PublicLayout";
 import Upload from "./pages/admin/Upload";
-import Gallery from "./pages/admin/Gallery";
+import AdminGallery from "./pages/admin/AdminGallery";
+import Gallery from "./pages/Gallery";
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
           <Route element={<DashboardLayout />}>
             <Route path="/admin/dashboard" element={<DashboardHome />} />
             <Route path="/admin/upload" element={<Upload />} />
-            <Route path="/admin/gallery" element={<Gallery />} />
+            <Route path="/admin/gallery" element={<AdminGallery />} />
           </Route>
         </Route>
 

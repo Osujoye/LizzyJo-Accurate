@@ -2,49 +2,70 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function AdminLogin() {
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const CORRECT_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  // Get credentials from environment variables
+  const CORRECT_EMAIL = import.meta.env.VITE_ADMIN_EMAIL?.trim().toLowerCase();
+  const CORRECT_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD?.trim();
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (password === CORRECT_PASSWORD) {
+    setError("");
+
+    // Normalize input
+    const inputEmail = email.trim().toLowerCase();
+    const inputPassword = password.trim();
+
+    if (inputEmail === CORRECT_EMAIL && inputPassword === CORRECT_PASSWORD) {
       localStorage.setItem("isAdmin", "true");
       navigate("/admin/dashboard");
     } else {
-      setError("Incorrect password");
+      setError("Invalid admin credentials");
     }
   };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Admin Login</h2>
+    <section className="min-h-screen flex items-center justify-center px-6 bg-linear-to-br from-pink-50 via-white to-purple-50">
+      <div className="w-full max-w-md bg-white border border-gray-200 rounded-2xl p-8 shadow-xl">
+        <h1 className="text-3xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+          Admin Login
+        </h1>
 
-        {error && <p className="text-red-600 mb-4 text-center">{error}</p>}
+        {error && (
+          <p className="text-red-500 text-center mb-4 font-medium">{error}</p>
+        )}
 
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-600"
-              placeholder="Enter admin password"
-              required
-            />
-          </div>
+        <form onSubmit={handleLogin} className="space-y-5">
+          <input
+            type="email"
+            placeholder="Admin Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+            required
+          />
+
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+            required
+          />
 
           <button
             type="submit"
-            className="w-full bg-purple-700 text-white py-2 rounded hover:bg-purple-800 transition"
+            className="w-full py-3 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-purple-500 hover:scale-105 transition"
           >
             Login
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 }
