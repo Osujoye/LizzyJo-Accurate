@@ -14,7 +14,6 @@ export default function Home() {
           <h3 className="text-2xl md:text-3xl font-bold text-gray-500 mb-4">
             Unmatched Quality
           </h3>
-          <img src="/100%.jpeg" alt="" />
           <p className="text-gray-300 text-lg leading-relaxed">
             We craft real wigs using 100% virgin European, Vietnamese, Filipino,
             and Indian hair for a natural look, luxurious feel, and longevity.
@@ -25,7 +24,6 @@ export default function Home() {
           <h3 className="text-2xl md:text-3xl font-bold text-gray-500 mb-4">
             Beginner Friendly
           </h3>
-          <img src="/human hair.jpeg" alt="" />
           <p className="text-gray-300 text-lg leading-relaxed">
             Natural rooted partings and realistic hairlines—no heavy plucking or
             gluing required. Perfect for every skill level.
@@ -36,7 +34,6 @@ export default function Home() {
           <h3 className="text-2xl md:text-3xl font-bold text-gray-500 mb-4">
             Customer First
           </h3>
-          <img src="/hair wig.jpeg" alt="" />
           <p className="text-gray-300 text-lg leading-relaxed">
             An independent brand committed to quality, affordability, and fast
             delivery. Your satisfaction is our priority.

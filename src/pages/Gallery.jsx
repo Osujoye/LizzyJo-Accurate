@@ -3,12 +3,15 @@ import React, { useState } from "react";
 export default function Gallery() {
   const media = [
     // Images
-    { type: "image", src: "src/assets/IMG-20251127-WA0002.jpg" },
-    { type: "image", src: "src/assets/IMG-20251127-WA0003.jpg" },
-    { type: "image", src: "src/assets/IMG-20251127-WA0004.jpg" },
-    { type: "image", src: "src/assets/IMG-20251127-WA0005.jpg" },
-    { type: "image", src: "src/assets/IMG-20251127-WA0006.jpg" },
-    { type: "image", src: "src/assets/IMG-20251127-WA0007.jpg" },
+    { type: "image", src: "/m1 (6).jpg" },
+    { type: "image", src: "/m1 (7).jpg" },
+    { type: "image", src: "/m1 (8).jpg" },
+    { type: "image", src: "/m1 (9).jpg" },
+    { type: "image", src: "/m1 (10).jpg" },
+    { type: "image", src: "/m1 (11).jpg" },  
+    { type: "image", src: "/m1 (12).jpg" },
+    { type: "image", src: "/m1 (13).jpg" },
+    { type: "image", src: "/m1 (14).jpg" }, 
 
     // Videos
     { type: "video", src: "src/assets/video1.mp4" },

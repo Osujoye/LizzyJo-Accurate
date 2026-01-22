@@ -2,7 +2,7 @@ import React from "react";
 import { FaEnvelope } from "react-icons/fa";
 
 export default function Hero() {
-  const banner = "/hero.jpg";
+  const banner = "/m1 (3).jpg";
 
   return (
     <section className="relative w-full h-[85vh] md:h-[75vh] overflow-hidden">
@@ -10,7 +10,7 @@ export default function Hero() {
       <img
         src={banner}
         alt="banner"
-        className="w-full h-full object-fit brightness-50"
+        className="w-full h-full object-fit brightness-70"
       />
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
