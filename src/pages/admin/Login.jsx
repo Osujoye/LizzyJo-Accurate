@@ -29,7 +29,7 @@ export default function AdminLogin() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 bg-linear-to-br from-pink-50 via-white to-purple-50">
+    <section className="md:px-32 flex items-center justify-center px-6 bg-linear-to-br from-pink-50 via-white to-purple-50">
       <div className="w-full max-w-md bg-white border border-gray-200 rounded-2xl p-8 shadow-xl">
         <h1 className="text-3xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
           Admin Login

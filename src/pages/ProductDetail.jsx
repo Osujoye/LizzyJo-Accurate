@@ -11,14 +11,15 @@ export default function ProductDetails() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/services/${id}`
+        const res = await fetch(
+          `${import.meta.env.VITE_API_URL}/services/${id}`,
         );
 
         if (!res.ok) throw new Error("Failed to fetch product");
 
         const data = await res.json();
         setProduct(data);
-      } catch (err) {
+      } catch (error) {
         setError("Unable to load product details");
       } finally {
         setLoading(false);
@@ -41,9 +42,7 @@ export default function ProductDetails() {
   if (error || !product) {
     return (
       <section className="bg-dark min-h-screen flex flex-col items-center justify-center">
-        <p className="text-red-500 mb-4">
-          {error || "Product not found"}
-        </p>
+        <p className="text-red-500 mb-4">{error || "Product not found"}</p>
         <Link to="/products" className="text-accent underline">
           Back to products
         </Link>
@@ -54,7 +53,6 @@ export default function ProductDetails() {
   return (
     <section className="bg-dark min-h-screen py-24 px-6 md:px-32">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-        
         {/* Image */}
         <div className="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
           <img
@@ -70,9 +68,7 @@ export default function ProductDetails() {
             {product.title}
           </h1>
 
-          <p className="mt-4 text-gray-400 text-lg">
-            {product.description}
-          </p>
+          <p className="mt-4 text-gray-400 text-lg">{product.description}</p>
 
           <p className="mt-6 text-3xl font-extrabold text-primary">
             ₦{Number(product.price).toLocaleString()}

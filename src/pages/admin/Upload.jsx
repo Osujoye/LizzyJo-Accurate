@@ -5,6 +5,24 @@ import Swal from "sweetalert2";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
+/* MOTION VARIANTS */
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12 },
+  },
+};
+
+const item = {
+  hidden: { y: 25, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.45, ease: "easeOut" },
+  },
+};
+
 export default function UploadProduct() {
   const navigate = useNavigate();
 
@@ -26,24 +44,18 @@ export default function UploadProduct() {
     }
   }, []);
 
-  /* IMAGE PREVIEW */
   const handleImageChange = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
     setImage(file);
-    const objectUrl = URL.createObjectURL(file);
-    setPreview(objectUrl);
+    setPreview(URL.createObjectURL(file));
   };
 
-  /* CLEAN UP PREVIEW */
   useEffect(() => {
-    return () => {
-      if (preview) URL.revokeObjectURL(preview);
-    };
+    return () => preview && URL.revokeObjectURL(preview);
   }, [preview]);
 
-  /* SUBMIT */
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -70,10 +82,7 @@ export default function UploadProduct() {
         body: formData,
       });
 
-      if (!res.ok) {
-        const msg = await res.text();
-        throw new Error(msg || "Upload failed");
-      }
+      if (!res.ok) throw new Error("Upload failed");
 
       Swal.fire({
         icon: "success",
@@ -97,22 +106,29 @@ export default function UploadProduct() {
 
   return (
     <motion.section
-      className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50 pt-16 pb-20 px-6"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      className="md:px-32 bg-gradient-to-br from-pink-50 via-white to-purple-50 pt-16 pb-20 px-6"
+      variants={container}
+      initial="hidden"
+      animate="show"
     >
       <motion.div
         className="max-w-xl mx-auto bg-white/70 backdrop-blur-xl border border-pink-100 rounded-3xl p-8 shadow-xl"
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        variants={item}
       >
-        <h1 className="text-3xl font-extrabold text-center text-pink-600 mb-6">
+        <motion.h1
+          className="text-3xl font-extrabold text-center text-pink-600 mb-6"
+          variants={item}
+        >
           Upload New Product
-        </h1>
+        </motion.h1>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <input
+        <motion.form
+          onSubmit={handleSubmit}
+          className="space-y-5"
+          variants={container}
+        >
+          <motion.input
+            variants={item}
             type="text"
             placeholder="Product Title"
             value={title}
@@ -120,7 +136,8 @@ export default function UploadProduct() {
             className="w-full p-3 rounded-xl border border-pink-200 focus:ring-2 focus:ring-pink-200"
           />
 
-          <textarea
+          <motion.textarea
+            variants={item}
             placeholder="Product Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -128,7 +145,8 @@ export default function UploadProduct() {
             className="w-full p-3 rounded-xl border border-pink-200 focus:ring-2 focus:ring-pink-200"
           />
 
-          <input
+          <motion.input
+            variants={item}
             type="number"
             placeholder="Price (₦)"
             value={price}
@@ -136,7 +154,8 @@ export default function UploadProduct() {
             className="w-full p-3 rounded-xl border border-pink-200 focus:ring-2 focus:ring-pink-200"
           />
 
-          <input
+          <motion.input
+            variants={item}
             type="file"
             accept="image/*"
             onChange={handleImageChange}
@@ -144,21 +163,25 @@ export default function UploadProduct() {
           />
 
           {preview && (
-            <img
+            <motion.img
               src={preview}
               alt="Preview"
               className="w-full h-48 object-cover rounded-xl border border-pink-200"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
             />
           )}
 
-          <button
+          <motion.button
             type="submit"
             disabled={loading}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="w-full py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold disabled:opacity-50"
           >
             {loading ? "Uploading..." : "Upload Product"}
-          </button>
-        </form>
+          </motion.button>
+        </motion.form>
       </motion.div>
     </motion.section>
   );

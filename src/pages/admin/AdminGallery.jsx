@@ -35,7 +35,7 @@ export default function AdminGalleryLocal() {
   };
 
   return (
-    <section className="bg-dark text-white py-24 px-6 md:px-32 min-h-screen">
+    <section className="bg-dark text-white py-24 px-6 md:px-32">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-pink-300">
           Admin Gallery
@@ -61,7 +61,7 @@ export default function AdminGalleryLocal() {
           )}
           <button
             type="submit"
-            className="w-full py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full hover:opacity-90 transition"
+            className="w-full py-3 bg-linear-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full hover:opacity-90 transition"
           >
             Add Image
           </button>

@@ -152,7 +152,7 @@ const [price, setPrice] = useState("");
   /* UI */
   return (
     <motion.section
-      className="min-h-screen pt-10 pb-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 px-6"
+      className="pt-10 pb-20 bg-linear-to-br from-pink-50 via-white to-purple-50 px-6 md:px-32"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -203,7 +203,7 @@ const [price, setPrice] = useState("");
                   <div className="flex gap-2">
                     <button
                       onClick={() => handleUpdate(p._id)}
-                      className="flex-1 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold"
+                      className="flex-1 py-2 rounded-full bg-linear-to-r from-pink-500 to-purple-500 text-white font-bold"
                     >
                       Save
                     </button>
