@@ -19,7 +19,7 @@ export default function DashboardLayout() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100 overflow-hidden">
+    <div className="flex h-screen overflow-hidden bg-gray-50">
       {/* Mobile Overlay */}
       {open && (
         <div
@@ -36,19 +36,28 @@ export default function DashboardLayout() {
       >
         <div className="p-6 border-b border-purple-800 flex justify-between items-center">
           <h1 className="text-lg font-semibold">LizzyJo Accurate Admin</h1>
-          <button
-            className="md:hidden"
-            onClick={() => setOpen(false)}
-          >
+          <button className="md:hidden" onClick={() => setOpen(false)}>
             <X />
           </button>
         </div>
 
         <nav className="flex-1 px-4 py-6">
           <ul className="space-y-2">
-            <NavItem to="/admin/dashboard" icon={<LayoutDashboard size={20} />} label="Dashboard" />
-            <NavItem to="/admin/upload" icon={<LampDesk size={20} />} label="Upload" />
-            <NavItem to="/admin/gallery" icon={<Images size={20} />} label="Gallery" />
+            <NavItem
+              to="/admin/dashboard"
+              icon={<LayoutDashboard size={20} />}
+              label="Dashboard"
+            />
+            <NavItem
+              to="/admin/upload"
+              icon={<LampDesk size={20} />}
+              label="Upload"
+            />
+            <NavItem
+              to="/admin/gallery"
+              icon={<Images size={20} />}
+              label="Gallery"
+            />
           </ul>
         </nav>
 
@@ -64,13 +73,10 @@ export default function DashboardLayout() {
       </aside>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col overflow-hidden md:ml-64">
+      <div className="flex-1 flex flex-col overflow-hidden">
         <header className="bg-white shadow-sm px-4 md:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <button
-              className="md:hidden"
-              onClick={() => setOpen(true)}
-            >
+            <button className="md:hidden" onClick={() => setOpen(true)}>
               <Menu />
             </button>
             <h2 className="text-lg md:text-xl font-semibold text-gray-800">
@@ -110,9 +116,6 @@ function NavItem({ to, icon, label }) {
     </li>
   );
 }
-
-
-
 
 // import { Outlet, useNavigate, NavLink } from "react-router-dom";
 // import {

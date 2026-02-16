@@ -1,100 +1,137 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink as RouterNavLink } from "react-router-dom";
+import {
+  HiMenuAlt3,
+  HiX,
+  HiHome,
+  HiInformationCircle,
+  HiShoppingBag,
+  HiSparkles,
+  HiPhotograph,
+  HiPhone,
+} from "react-icons/hi";
 
-const NavLink = ({ to, children, onClick }) => (
-  <Link
+const NavItem = ({ to, icon, label, onClick }) => (
+  <RouterNavLink
     to={to}
     onClick={onClick}
-    className="text-sm md:text-base  text-gray-700 hover:bg-gradient-to-r from-pink-500 to-purple-400 rounded-lg hover:px-1 hover:py-1 hover:text-accent hover:text-white transition-colors duration-300 font-medium"
+    className={({ isActive }) =>
+      `flex items-center gap-2 px-4 py-2 rounded-lg text-sm md:text-base font-medium transition-all duration-300
+      ${
+        isActive
+          ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md"
+          : "text-gray-700 hover:bg-gradient-to-r hover:from-pink-400 hover:to-purple-400 hover:text-white"
+      }`
+    }
   >
-    {children}
-  </Link>
+    {icon}
+    {label}
+  </RouterNavLink>
 );
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="bg-linear-to-br from-pink-50 via-white to-purple-50 p-5 border-b border-gray-200 sticky top-0 z-50 shadow-sm flex items-center justify-between">
-      {/* Logo */}
-      <Link to="/" className="flex items-center space-x-3 select-none">
-        <img className="w-16 h-14 rounded-full" src="/logo.jpg" alt="" />
-        {/* <div className="relative">
-          <div className="w-6 h-6 bg-linear-to-br from pink-400 to purple-600 rounded-full blur-[1px]"></div>
-          <div className="absolute -right-2 top-1 w-5 h-2 bg-linear-to-r from-purple-500 to-pink-400 rounded-full rotate-12"></div>
-          <div className="absolute -left- bottom-0 w-4 h-2 bg-linear-to-r from-pink-500 to-purple-400 rounded-full rotate-12"></div>
-        </div>
-        <span className="text-2xl font-semibold italic text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500 tracking-wide">
-          LizzyJo
-        </span> */}
-      </Link>
-      {/* <div className="flex items-center gap-4">
-        <div className="w-12 h-12 rounded-full bg-linear-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
-          <span className="font-bold text-white text-lg md:text-xl">L</span>
-        </div>
-        <div>
-          <h1 className="text-xl md:text-2xl font-bold tracking-tight text-pink-300 italic">
-            LizzyJo
-          </h1>
-        </div>
-      </div> */}
+    <>
+      {/* NAVBAR */}
+      <header className="sticky top-0 z-50 backdrop-blur-lg bg-white/70 border-b border-white/30 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="/logo.jpg"
+              alt="logo"
+              className="w-12 h-12 rounded-full object-cover shadow-md"
+            />
+          </Link>
 
-      {/* Desktop Links */}
-      <nav className="hidden md:flex items-center gap-8">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/products">Products</NavLink>
-        <NavLink to="/why">Why Us</NavLink>
-        <NavLink to="/gallery">Gallery</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-      </nav>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-3">
+            <NavItem to="/" icon={<HiHome />} label="Home" />
+            <NavItem to="/products" icon={<HiShoppingBag />} label="Products" />
+            <NavItem to="/gallery" icon={<HiPhotograph />} label="Gallery" />
+            <NavItem to="/about" icon={<HiInformationCircle />} label="About" />
+            <NavItem to="/why" icon={<HiSparkles />} label="Why Us" />
+            <NavItem to="/contact" icon={<HiPhone />} label="Contact" />
+          </nav>
 
-      {/* Mobile Menu Button */}
-      <button
-        className="md:hidden p-2 rounded-md bg-black transition"
-        onClick={() => setOpen(!open)}
-        aria-label="menu"
+          {/* Mobile Button */}
+          <button
+            onClick={() => setOpen(true)}
+            className="md:hidden p-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg"
+          >
+            <HiMenuAlt3 size={26} />
+          </button>
+        </div>
+      </header>
+
+      {/* MOBILE DRAWER */}
+      <div
+        className={`fixed inset-0 z-50 transition-all duration-300 ${
+          open ? "visible" : "invisible"
+        }`}
       >
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      </button>
+        {/* Overlay */}
+        <div
+          onClick={() => setOpen(false)}
+          className={`absolute inset-0 bg-black/50 transition-opacity ${
+            open ? "opacity-100" : "opacity-0"
+          }`}
+        />
 
-      {/* Mobile Menu */}
-      {open && (
-        <div className="absolute left-0 right-0 top-20 bg-black/90 py-6 md:hidden shadow-lg">
-          <div className="flex flex-col bg-linear-to-br from-pink-50 via-white to-purple-50 gap-4 max-w-md mx-auto items-center">
-            <NavLink to="/" onClick={() => setOpen(false)}>
-              Home
-            </NavLink>
-            <NavLink to="/about" onClick={() => setOpen(false)}>
-              About
-            </NavLink>
-            <NavLink to="/products" onClick={() => setOpen(false)}>
-              Products
-            </NavLink>
-            <NavLink to="/why" onClick={() => setOpen(false)}>
-              Why Us
-            </NavLink>
-            <NavLink to="/gallery" onClick={() => setOpen(false)}>
-              Gallery
-            </NavLink>
-            <NavLink to="/contact" onClick={() => setOpen(false)}>
-              Contact
-            </NavLink>
+        {/* Drawer */}
+        <div
+          className={`absolute right-0 top-0 h-full w-72 bg-white shadow-xl transform transition-transform duration-300
+          ${open ? "translate-x-0" : "translate-x-full"}`}
+        >
+          <div className="flex items-center justify-between px-5 py-4 border-b">
+            <span className="text-lg font-semibold text-gray-800">Menu</span>
+            <button onClick={() => setOpen(false)}>
+              <HiX size={24} />
+            </button>
           </div>
+
+          <nav className="flex flex-col gap-2 p-4">
+            <NavItem
+              to="/"
+              icon={<HiHome />}
+              label="Home"
+              onClick={() => setOpen(false)}
+            />
+            <NavItem
+              to="/products"
+              icon={<HiShoppingBag />}
+              label="Products"
+              onClick={() => setOpen(false)}
+            />
+            <NavItem
+              to="/gallery"
+              icon={<HiPhotograph />}
+              label="Gallery"
+              onClick={() => setOpen(false)}
+            />
+            <NavItem
+              to="/about"
+              icon={<HiInformationCircle />}
+              label="About"
+              onClick={() => setOpen(false)}
+            />
+            <NavItem
+              to="/why"
+              icon={<HiSparkles />}
+              label="Why Us"
+              onClick={() => setOpen(false)}
+            />
+            <NavItem
+              to="/contact"
+              icon={<HiPhone />}
+              label="Contact"
+              onClick={() => setOpen(false)}
+            />
+          </nav>
         </div>
-      )}
-    </header>
+      </div>
+    </>
   );
 }

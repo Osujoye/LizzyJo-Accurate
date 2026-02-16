@@ -8,14 +8,15 @@ export default function Gallery() {
     { type: "image", src: "/m1 (8).jpg" },
     { type: "image", src: "/m1 (9).jpg" },
     { type: "image", src: "/m1 (10).jpg" },
-    { type: "image", src: "/m1 (11).jpg" },  
+    { type: "image", src: "/m1 (11).jpg" },
     { type: "image", src: "/m1 (12).jpg" },
     { type: "image", src: "/m1 (13).jpg" },
-    { type: "image", src: "/m1 (14).jpg" }, 
+    { type: "image", src: "/m1 (14).jpg" },
 
     // Videos
-    { type: "video", src: "src/assets/video1.mp4" },
-    { type: "video", src: "src/assets/video2.mp4" },
+    { type: "video", src: "/redo/BJVL8299.MP4" },
+    { type: "video", src: "/redo/EJJA2898.MP4" },
+    { type: "video", src: "/redo/KRVT5580.MP4" },
   ];
 
   const [selectedMedia, setSelectedMedia] = useState(null);
